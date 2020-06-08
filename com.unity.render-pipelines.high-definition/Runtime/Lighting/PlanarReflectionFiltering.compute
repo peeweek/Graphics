@@ -58,9 +58,10 @@ CBUFFER_END
 // Output buffer of our filtering code
 RW_TEXTURE2D(float4, _FilteredPlanarReflectionBuffer);
 
-// These angles have been experimentally computed to match the result of reflection probes. Initially this was a table dependent on angle and roughness, but given that every planar has a 
-// finite number of LODs and those LODS have fixed roughness and the angle changes the result, but not that much. I changed it to a per LOD LUT
-static const float reflectionProbeEquivalentAngles[UNITY_SPECCUBE_LOD_STEPS + 1] = {0.0, 0.04, 0.12, 0.4, 0.9, 1.2, 1.2};
+float GGXHalfSpaceConeTangent(float roughness)
+{
+    return roughness * 2.0;
+}
 
 [numthreads(PLANAR_REFLECTION_TILE_SIZE, PLANAR_REFLECTION_TILE_SIZE, 1)]
 void FilterPlanarReflection(uint3 dispatchThreadId : SV_DispatchThreadID, uint2 groupThreadId : SV_GroupThreadID, uint2 groupId : SV_GroupID)
@@ -95,14 +96,16 @@ void FilterPlanarReflection(uint3 dispatchThreadId : SV_DispatchThreadID, uint2 
     const float3 integrationPositionRWS = _CaptureCameraPositon + rayDirection * t;
 
     // Evaluate the cone halfangle for the filtering
-    const float halfAngle = reflectionProbeEquivalentAngles[_SourceMipIndex];
+    const float reflectionProbeEquivalentAngles[UNITY_SPECCUBE_LOD_STEPS + 1] = { 0.0, 0.04, 0.12, 0.4, 0.9, 1.2, 1.2 };
+    //const float tanHalfAngle = tan(reflectionProbeEquivalentAngles[_SourceMipIndex]);
+    float tanHalfAngle = GGXHalfSpaceConeTangent(MipmapLevelToPerceptualRoughness(_SourceMipIndex));
 
     // Compute the distances we need for our filtering
     const float distanceCameraToPlane = length(integrationPositionRWS - _CaptureCameraPositon);
     const float distancePlaneToObject = length(centralPosInput.positionWS - integrationPositionRWS);
 
     // Compute the cone footprint on the image reflection plane for this configuration
-    const float brdfConeRadius = tan(halfAngle) * distancePlaneToObject;
+    const float brdfConeRadius = tanHalfAngle * distancePlaneToObject;
 
     // We need to compute the view cone radius
     const float viewConeRadius = brdfConeRadius * distanceCameraToPlane / (distancePlaneToObject + distanceCameraToPlane);
