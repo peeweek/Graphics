@@ -1858,7 +1858,7 @@ namespace UnityEngine.Rendering.HighDefinition
 
                         // We don't need to provide the capture position
                         // It is already encoded in the 'worldToCameraRHSMatrix'
-                        capturePosition = Vector3.zero;
+                        capturePosition = renderData.capturePosition;
 
                         // Indices start at 1, because -0 == 0, we can know from the bit sign which cache to use
                         envIndex = scaleOffset == Vector4.zero ? int.MinValue : -(fetchIndex + 1);

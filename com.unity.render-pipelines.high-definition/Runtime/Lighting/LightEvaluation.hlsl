@@ -522,6 +522,18 @@ void EvaluateLight_EnvIntersection(float3 positionWS, float3 normalWS, EnvLightD
     // Smooth weighting
     weight = Smoothstep01(weight);
     weight *= light.weight;
+
+    if (light.envIndex < 0)
+    {
+        // For a planar reflection, make a smooth blending when the reflected ray goes out of the reflection frustum
+        int index = abs(light.envIndex) - 1;
+        float2 coords = abs(saturate(ComputeNormalizedDeviceCoordinatesWithZ(R, _Env2DCaptureVP[index]).xy) * 2.0 - 1.0);
+        float attenuation = Smoothstep01(saturate(2.0 - 2.0 * max(coords.x, coords.y)));
+
+        // If the surface if aligned with the reflection plane, do not apply smoothing because no ray should go out
+        float3 plane = -normalize(light.capturePositionRWS);
+        weight *= lerp(attenuation, 1.0, dot(plane, normalWS) > 0.9999);
+    }
 }
 
 void InversePreExposeSsrLighting(inout float4 ssrLighting)
