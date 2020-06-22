@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 4
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -101,6 +101,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_30B74B6C_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 3f9313f68c2869648b020663f29c8420, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3c68ddc40faf44879a1a9184ccd5ff8c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 3f9313f68c2869648b020663f29c8420, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4ee1c6b1c2a442328402273bd00678e0_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 3f9313f68c2869648b020663f29c8420, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_502fd4a1e26c4e92a474ee7817062152_Texture_1:
         m_Texture: {fileID: 2800000, guid: 3f9313f68c2869648b020663f29c8420, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -215,6 +227,7 @@ Material:
     - _Metallic: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1
+    - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -248,7 +261,7 @@ Material:
     - _StencilWriteMaskMV: 40
     - _Stiffness: 1
     - _SubsurfaceMask: 1
-    - _SupportDecals: 0
+    - _SupportDecals: 1
     - _SurfaceType: 0
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
