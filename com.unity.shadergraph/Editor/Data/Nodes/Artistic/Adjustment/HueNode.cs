@@ -49,7 +49,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_Hue_Degrees(
             [Slot(0, Binding.None)] Vector3 In,
-            [Slot(1, Binding.None)] Vector1 Offset,
+            [Slot(1, Binding.None)] Float Offset,
             [Slot(2, Binding.None)] out Vector3 Out)
         {
             Out = Vector3.zero;
@@ -80,7 +80,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_Hue_Normalized(
             [Slot(0, Binding.None)] Vector3 In,
-            [Slot(1, Binding.None, 0.5f, 0.5f, 0.5f, 0.5f)] Vector1 Offset,
+            [Slot(1, Binding.None, 0.5f, 0.5f, 0.5f, 0.5f)] Float Offset,
             [Slot(2, Binding.None)] out Vector3 Out)
         {
             Out = Vector3.zero;

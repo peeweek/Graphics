@@ -41,9 +41,9 @@ namespace UnityEditor.ShaderGraph
         public sealed override void UpdateNodeAfterDeserialization()
         {
             AddSlot(new UVMaterialSlot(UVSlotId, kUVSlotName, kUVSlotName, UVChannel.UV0));
-            AddSlot(new Vector1MaterialSlot(WidthSlotId, kWidthSlotName, kWidthSlotName, SlotType.Input, 1));
-            AddSlot(new Vector1MaterialSlot(HeightSlotId, kHeightSlotName, kHeightSlotName, SlotType.Input, 1));
-            AddSlot(new Vector1MaterialSlot(TileSlotId, kTileSlotName, kTileSlotName, SlotType.Input, 0));
+            AddSlot(new FloatMaterialSlot(WidthSlotId, kWidthSlotName, kWidthSlotName, SlotType.Input, 1));
+            AddSlot(new FloatMaterialSlot(HeightSlotId, kHeightSlotName, kHeightSlotName, SlotType.Input, 1));
+            AddSlot(new FloatMaterialSlot(TileSlotId, kTileSlotName, kTileSlotName, SlotType.Input, 0));
             AddSlot(new Vector2MaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, Vector2.zero));
             RemoveSlotsNameNotMatching(new[] { UVSlotId, WidthSlotId, HeightSlotId, TileSlotId, OutputSlotId });
         }

@@ -19,8 +19,8 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_SimpleNoise(
             [Slot(0, Binding.MeshUV0)] Vector2 UV,
-            [Slot(1, Binding.None, 500f, 500f, 500f, 500f)] Vector1 Scale,
-            [Slot(2, Binding.None)] out Vector1 Out)
+            [Slot(1, Binding.None, 500f, 500f, 500f, 500f)] Float Scale,
+            [Slot(2, Binding.None)] out Float Out)
         {
             return
                 @"

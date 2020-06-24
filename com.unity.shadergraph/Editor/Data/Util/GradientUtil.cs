@@ -59,21 +59,21 @@ namespace UnityEditor.ShaderGraph
 
         public static void GetGradientPropertiesForPreview(PropertyCollector properties, string name, Gradient value)
         {
-            properties.AddShaderProperty(new Vector1ShaderProperty()
+            properties.AddShaderProperty(new FloatShaderProperty()
             {
                 overrideReferenceName = $"{name}_Type",
                 value = (int)value.mode,
                 generatePropertyBlock = false
             });
 
-            properties.AddShaderProperty(new Vector1ShaderProperty()
+            properties.AddShaderProperty(new FloatShaderProperty()
             {
                 overrideReferenceName = $"{name}_ColorsLength",
                 value = value.colorKeys.Length,
                 generatePropertyBlock = false
             });
 
-            properties.AddShaderProperty(new Vector1ShaderProperty()
+            properties.AddShaderProperty(new FloatShaderProperty()
             {
                 overrideReferenceName = $"{name}_AlphasLength",
                 value = value.alphaKeys.Length,

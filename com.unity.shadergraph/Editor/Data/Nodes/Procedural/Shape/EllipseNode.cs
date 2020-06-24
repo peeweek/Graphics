@@ -19,9 +19,9 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_Ellipse(
             [Slot(0, Binding.MeshUV0)] Vector2 UV,
-            [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Vector1 Width,
-            [Slot(3, Binding.None, 0.5f, 0, 0, 0)] Vector1 Height,
-            [Slot(4, Binding.None, ShaderStageCapability.Fragment)] out Vector1 Out)
+            [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Float Width,
+            [Slot(3, Binding.None, 0.5f, 0, 0, 0)] Float Height,
+            [Slot(4, Binding.None, ShaderStageCapability.Fragment)] out Float Out)
         {
             return
                 @"

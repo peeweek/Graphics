@@ -20,8 +20,8 @@ namespace UnityEditor.ShaderGraph
             [Slot(0, Binding.None)] Vector3 In,
             [Slot(1, Binding.None)] ColorRGB From,
             [Slot(2, Binding.None)] ColorRGB To,
-            [Slot(3, Binding.None)] Vector1 Range,
-            [Slot(5, Binding.None)] Vector1 Fuzziness,
+            [Slot(3, Binding.None)] Float Range,
+            [Slot(5, Binding.None)] Float Fuzziness,
             [Slot(4, Binding.None)] out Vector3 Out)
         {
             Out = Vector3.zero;

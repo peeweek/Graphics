@@ -18,7 +18,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_Saturation(
             [Slot(0, Binding.None)] Vector3 In,
-            [Slot(1, Binding.None, 1, 1, 1, 1)] Vector1 Saturation,
+            [Slot(1, Binding.None, 1, 1, 1, 1)] Float Saturation,
             [Slot(2, Binding.None)] out Vector3 Out)
         {
             Out = Vector3.zero;

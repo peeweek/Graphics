@@ -25,7 +25,7 @@ namespace UnityEditor.ShaderGraph
 
         public sealed override void UpdateNodeAfterDeserialization()
         {
-            AddSlot(new Vector1MaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, 0));
+            AddSlot(new FloatMaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, 0));
             RemoveSlotsNameNotMatching(new[] { OutputSlotId });
         }
 
@@ -49,7 +49,7 @@ namespace UnityEditor.ShaderGraph
             if (!generationMode.IsPreview())
                 return;
 
-            properties.AddShaderProperty(new Vector1ShaderProperty()
+            properties.AddShaderProperty(new FloatShaderProperty()
             {
                 overrideReferenceName = GetVariableNameForNode(),
                 generatePropertyBlock = false,
@@ -74,7 +74,7 @@ namespace UnityEditor.ShaderGraph
 
         public override void CollectPreviewMaterialProperties(List<PreviewProperty> properties)
         {
-            properties.Add(new PreviewProperty(PropertyType.Vector1)
+            properties.Add(new PreviewProperty(PropertyType.Float)
             {
                 name = GetVariableNameForNode(),
                 floatValue = m_Value.x
@@ -83,7 +83,7 @@ namespace UnityEditor.ShaderGraph
 
         public AbstractShaderProperty AsShaderProperty()
         {
-            return new Vector1ShaderProperty
+            return new FloatShaderProperty
             {
                 value = value.x,
                 rangeValues = new Vector2(value.y, value.z),

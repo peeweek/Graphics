@@ -24,13 +24,13 @@ namespace UnityEditor.ShaderGraph
             if (owner == null)
                 return;
 
-            if (property is Vector1ShaderProperty vector1ShaderProperty && vector1ShaderProperty.floatType == FloatType.Slider)
+            if (property is FloatShaderProperty floatShaderProperty && floatShaderProperty.floatType == FloatType.Slider)
             {
-                // Previously, the Slider vector1 property allowed the min value to be greater than the max
+                // Previously, the Slider float property allowed the min value to be greater than the max
                 // We no longer want to support that behavior so if such a property is encountered, swap the values
-                if (vector1ShaderProperty.rangeValues.x > vector1ShaderProperty.rangeValues.y)
+                if (floatShaderProperty.rangeValues.x > floatShaderProperty.rangeValues.y)
                 {
-                    vector1ShaderProperty.rangeValues = new Vector2(vector1ShaderProperty.rangeValues.y, vector1ShaderProperty.rangeValues.x);
+                    floatShaderProperty.rangeValues = new Vector2(floatShaderProperty.rangeValues.y, floatShaderProperty.rangeValues.x);
                     Dirty(ModificationScope.Graph);
                 }
             }
@@ -70,8 +70,8 @@ namespace UnityEditor.ShaderGraph
                     AddSlot(new BooleanMaterialSlot(OutputSlotId, property.displayName, "Out", SlotType.Output, false));
                     RemoveSlotsNameNotMatching(new[] { OutputSlotId });
                     break;
-                case ConcreteSlotValueType.Vector1:
-                    AddSlot(new Vector1MaterialSlot(OutputSlotId, property.displayName, "Out", SlotType.Output, 0));
+                case ConcreteSlotValueType.Float:
+                    AddSlot(new FloatMaterialSlot(OutputSlotId, property.displayName, "Out", SlotType.Output, 0));
                     RemoveSlotsNameNotMatching(new[] {OutputSlotId});
                     break;
                 case ConcreteSlotValueType.Vector2:
@@ -138,7 +138,7 @@ namespace UnityEditor.ShaderGraph
                 case PropertyType.Boolean:
                     sb.AppendLine($"$precision {GetVariableNameForSlot(OutputSlotId)} = {property.referenceName};");
                     break;
-                case PropertyType.Vector1:
+                case PropertyType.Float:
                     sb.AppendLine($"$precision {GetVariableNameForSlot(OutputSlotId)} = {property.referenceName};");
                     break;
                 case PropertyType.Vector2:

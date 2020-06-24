@@ -23,7 +23,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_SampleGradient(
             [Slot(0, Binding.None)] Gradient Gradient,
-            [Slot(1, Binding.None)] Vector1 Time,
+            [Slot(1, Binding.None)] Float Time,
             [Slot(2, Binding.None)] out Vector4 Out)
         {
             Out = Vector4.zero;

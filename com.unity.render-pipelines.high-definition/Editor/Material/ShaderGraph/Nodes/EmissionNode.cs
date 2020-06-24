@@ -67,16 +67,16 @@ namespace UnityEditor.Rendering.HighDefinition
         public override bool hasPreview { get { return false; } }
 
         ColorRGBMaterialSlot    ldrColorSlot;
-        Vector1MaterialSlot     intensitySlot;
+        FloatMaterialSlot     intensitySlot;
 
         public sealed override void UpdateNodeAfterDeserialization()
         {
             // Input slots:
             ldrColorSlot = new ColorRGBMaterialSlot(kEmissionColorInputSlotId, kEmissionColorInputSlotName, kEmissionColorInputSlotName, SlotType.Input, Color.black, ColorMode.Default);
-            intensitySlot = new Vector1MaterialSlot(kEmissionIntensityInputSlotId, kEmissionIntensityInputSlotName, kEmissionIntensityInputSlotName, SlotType.Input, 1);
+            intensitySlot = new FloatMaterialSlot(kEmissionIntensityInputSlotId, kEmissionIntensityInputSlotName, kEmissionIntensityInputSlotName, SlotType.Input, 1);
             AddSlot(ldrColorSlot);
             AddSlot(intensitySlot);
-            AddSlot(new Vector1MaterialSlot(kEmissionExposureWeightInputSlotId, kEmissionExpositionWeightInputSlotName, kEmissionExpositionWeightInputSlotName, SlotType.Input, 1));
+            AddSlot(new FloatMaterialSlot(kEmissionExposureWeightInputSlotId, kEmissionExpositionWeightInputSlotName, kEmissionExpositionWeightInputSlotName, SlotType.Input, 1));
 
             // Output slot:kEmissionOutputSlotName
             AddSlot(new ColorRGBMaterialSlot(kEmissionOutputSlotId, kEmissionOutputSlotName, kEmissionOutputSlotName , SlotType.Output, Color.black, ColorMode.HDR));

@@ -63,7 +63,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_SceneDepth_Linear01(
             [Slot(0, Binding.ScreenPosition)] Vector4 UV,
-            [Slot(1, Binding.None, ShaderStageCapability.Fragment)] out Vector1 Out)
+            [Slot(1, Binding.None, ShaderStageCapability.Fragment)] out Float Out)
         {
             return
                 @"
@@ -75,7 +75,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_SceneDepth_Raw(
             [Slot(0, Binding.ScreenPosition)] Vector4 UV,
-            [Slot(1, Binding.None, ShaderStageCapability.Fragment)] out Vector1 Out)
+            [Slot(1, Binding.None, ShaderStageCapability.Fragment)] out Float Out)
         {
             return
                 @"
@@ -87,7 +87,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_SceneDepth_Eye(
             [Slot(0, Binding.ScreenPosition)] Vector4 UV,
-            [Slot(1, Binding.None, ShaderStageCapability.Fragment)] out Vector1 Out)
+            [Slot(1, Binding.None, ShaderStageCapability.Fragment)] out Float Out)
         {
             return
                 @"

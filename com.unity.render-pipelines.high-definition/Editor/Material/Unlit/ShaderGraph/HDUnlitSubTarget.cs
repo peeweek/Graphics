@@ -111,7 +111,7 @@ namespace UnityEditor.Rendering.HighDefinition.ShaderGraph
             {
                 uint mantissa = ((uint)LightFeatureFlags.Punctual | (uint)LightFeatureFlags.Directional | (uint)LightFeatureFlags.Area) & 0x007FFFFFu;
                 uint exponent = 0b10000000u; // 0 as exponent
-                collector.AddShaderProperty(new Vector1ShaderProperty
+                collector.AddShaderProperty(new FloatShaderProperty
                 {
                     hidden = true,
                     value = HDShadowUtils.Asfloat((exponent << 23) | mantissa),

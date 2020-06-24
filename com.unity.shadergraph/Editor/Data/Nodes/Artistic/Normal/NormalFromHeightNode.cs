@@ -59,8 +59,8 @@ namespace UnityEditor.ShaderGraph
 
         public sealed override void UpdateNodeAfterDeserialization()
         {
-            AddSlot(new Vector1MaterialSlot(InputSlotId, kInputSlotName, kInputSlotName, SlotType.Input, 0));
-            AddSlot(new Vector1MaterialSlot(StrengthSlotId, kStrengthSlotName, kStrengthSlotName, SlotType.Input, 0.01f));
+            AddSlot(new FloatMaterialSlot(InputSlotId, kInputSlotName, kInputSlotName, SlotType.Input, 0));
+            AddSlot(new FloatMaterialSlot(StrengthSlotId, kStrengthSlotName, kStrengthSlotName, SlotType.Input, 0.01f));
             AddSlot(new Vector3MaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, Vector4.zero));
             RemoveSlotsNameNotMatching(new[] { InputSlotId, StrengthSlotId, OutputSlotId });
         }

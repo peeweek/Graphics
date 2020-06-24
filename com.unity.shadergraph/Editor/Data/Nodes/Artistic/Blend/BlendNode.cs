@@ -44,7 +44,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Burn(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -58,7 +58,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Darken(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -72,7 +72,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Difference(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -86,7 +86,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Dodge(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -100,7 +100,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Divide(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -114,7 +114,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Exclusion(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -128,7 +128,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_HardLight(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -145,7 +145,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_HardMix(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -159,7 +159,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Lighten(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -173,7 +173,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_LinearBurn(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -187,7 +187,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_LinearDodge(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -201,7 +201,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_LinearLight(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -215,7 +215,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_LinearLightAddSub(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -229,7 +229,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Multiply(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -243,7 +243,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Negation(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -257,7 +257,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Screen(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -271,7 +271,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Overlay(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -289,7 +289,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_PinLight(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -306,7 +306,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_SoftLight(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -324,7 +324,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_VividLight(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -343,7 +343,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Subtract(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return
@@ -358,7 +358,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Blend_Overwrite(
             [Slot(0, Binding.None)] DynamicDimensionVector Base,
             [Slot(1, Binding.None)] DynamicDimensionVector Blend,
-            [Slot(3, Binding.None, 1, 1, 1, 1)] Vector1 Opacity,
+            [Slot(3, Binding.None, 1, 1, 1, 1)] Float Opacity,
             [Slot(2, Binding.None)] out DynamicDimensionVector Out)
         {
             return

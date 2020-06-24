@@ -37,7 +37,7 @@ namespace UnityEditor.ShaderGraph
         protected struct Boolean
         {}
 
-        protected struct Vector1
+        protected struct Float
         {}
 
         protected struct Texture2D
@@ -151,9 +151,9 @@ namespace UnityEditor.ShaderGraph
             {
                 return SlotValueType.Boolean;
             }
-            if (t == typeof(Vector1))
+            if (t == typeof(Float))
             {
-                return SlotValueType.Vector1;
+                return SlotValueType.Float;
             }
             if (t == typeof(Vector2))
             {

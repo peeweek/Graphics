@@ -18,9 +18,9 @@ namespace UnityEditor.ShaderGraph.Internal
         internal override AbstractMaterialNode ToConcreteNode()
         {
             var node = new Vector3Node();
-            node.FindInputSlot<Vector1MaterialSlot>(Vector3Node.InputSlotXId).value = value.x;
-            node.FindInputSlot<Vector1MaterialSlot>(Vector3Node.InputSlotYId).value = value.y;
-            node.FindInputSlot<Vector1MaterialSlot>(Vector3Node.InputSlotZId).value = value.z;
+            node.FindInputSlot<FloatMaterialSlot>(Vector3Node.InputSlotXId).value = value.x;
+            node.FindInputSlot<FloatMaterialSlot>(Vector3Node.InputSlotYId).value = value.y;
+            node.FindInputSlot<FloatMaterialSlot>(Vector3Node.InputSlotZId).value = value.z;
             return node;
         }
 

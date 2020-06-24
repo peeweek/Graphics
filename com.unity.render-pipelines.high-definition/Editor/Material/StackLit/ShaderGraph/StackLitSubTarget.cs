@@ -139,9 +139,9 @@ namespace UnityEditor.Rendering.HighDefinition.ShaderGraph
             context.AddField(CoatMask,                     stackLitData.coat && context.pass.validPixelBlocks.Contains(HDBlockFields.SurfaceDescription.CoatMask) &&
                                                                         descs.Contains(HDBlockFields.SurfaceDescription.CoatMask));
             // context.AddField(CoatMaskZero,                 coat.isOn && pass.pixelBlocks.Contains(CoatMaskSlotId) &&
-            //                                                                 FindSlot<Vector1MaterialSlot>(CoatMaskSlotId).value == 0.0f),
+            //                                                                 FindSlot<FloatMaterialSlot>(CoatMaskSlotId).value == 0.0f),
             // context.AddField(CoatMaskOne,                  coat.isOn && pass.pixelBlocks.Contains(CoatMaskSlotId) &&
-            //                                                                 FindSlot<Vector1MaterialSlot>(CoatMaskSlotId).value == 1.0f),
+            //                                                                 FindSlot<FloatMaterialSlot>(CoatMaskSlotId).value == 1.0f),
             context.AddField(CoatNormal,                   stackLitData.coatNormal
                 && (context.pass.validPixelBlocks.Contains(HDBlockFields.SurfaceDescription.CoatNormalOS)
                     || context.pass.validPixelBlocks.Contains(HDBlockFields.SurfaceDescription.CoatNormalTS)

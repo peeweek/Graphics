@@ -48,7 +48,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Rotate_Radians(
             [Slot(0, Binding.MeshUV0)] Vector2 UV,
             [Slot(1, Binding.None, 0.5f, 0.5f, 0.5f, 0.5f)] Vector2 Center,
-            [Slot(2, Binding.None)] Vector1 Rotation,
+            [Slot(2, Binding.None)] Float Rotation,
             [Slot(3, Binding.None)] out Vector2 Out)
         {
             Out = Vector2.zero;
@@ -79,7 +79,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Rotate_Degrees(
             [Slot(0, Binding.MeshUV0)] Vector2 UV,
             [Slot(1, Binding.None, 0.5f, 0.5f, 0.5f, 0.5f)] Vector2 Center,
-            [Slot(2, Binding.None)] Vector1 Rotation,
+            [Slot(2, Binding.None)] Float Rotation,
             [Slot(3, Binding.None)] out Vector2 Out)
         {
             Out = Vector2.zero;

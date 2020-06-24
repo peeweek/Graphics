@@ -8,7 +8,7 @@ using UnityEditor.ShaderGraph.Internal;
 namespace UnityEditor.ShaderGraph
 {
     [Title("Input", "Basic", "Vector 1")]
-    class Vector1Node : AbstractMaterialNode, IGeneratesBodyCode, IPropertyFromNode
+    class FloatNode : AbstractMaterialNode, IGeneratesBodyCode, IPropertyFromNode
     {
         [SerializeField]
         private float m_Value = 0;
@@ -19,17 +19,17 @@ namespace UnityEditor.ShaderGraph
         public const int InputSlotXId = 1;
         public const int OutputSlotId = 0;
 
-        public Vector1Node()
+        public FloatNode()
         {
-            name = "Vector 1";
+            name = "Float";
             UpdateNodeAfterDeserialization();
         }
 
 
         public sealed override void UpdateNodeAfterDeserialization()
         {
-            AddSlot(new Vector1MaterialSlot(InputSlotXId, kInputSlotXName, kInputSlotXName, SlotType.Input, m_Value));
-            AddSlot(new Vector1MaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, 0));
+            AddSlot(new FloatMaterialSlot(InputSlotXId, kInputSlotXName, kInputSlotXName, SlotType.Input, m_Value));
+            AddSlot(new FloatMaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, 0));
             RemoveSlotsNameNotMatching(new[] { OutputSlotId, InputSlotXId });
         }
 
@@ -41,8 +41,8 @@ namespace UnityEditor.ShaderGraph
 
         public AbstractShaderProperty AsShaderProperty()
         {
-            var slot = FindInputSlot<Vector1MaterialSlot>(InputSlotXId);
-            return new Vector1ShaderProperty { value = slot.value };
+            var slot = FindInputSlot<FloatMaterialSlot>(InputSlotXId);
+            return new FloatShaderProperty { value = slot.value };
         }
 
         int IPropertyFromNode.outputSlotId { get { return OutputSlotId; } }

@@ -18,11 +18,11 @@ namespace UnityEditor.ShaderGraph
 
         static string RoundedPolygon_Func(
             [Slot(0, Binding.MeshUV0)] Vector2 UV,
-            [Slot(1, Binding.None, 0.5f, 0, 0, 0)] Vector1 Width,
-            [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Vector1 Height,
-            [Slot(3, Binding.None, 5f, 0, 0, 0)] Vector1 Sides,
-            [Slot(4, Binding.None, 0.3f, 0, 0, 0)] Vector1 Roundness,
-            [Slot(5, Binding.None)] out Vector1 Out)
+            [Slot(1, Binding.None, 0.5f, 0, 0, 0)] Float Width,
+            [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Float Height,
+            [Slot(3, Binding.None, 5f, 0, 0, 0)] Float Sides,
+            [Slot(4, Binding.None, 0.3f, 0, 0, 0)] Float Roundness,
+            [Slot(5, Binding.None)] out Float Out)
         {
             return
                 @"

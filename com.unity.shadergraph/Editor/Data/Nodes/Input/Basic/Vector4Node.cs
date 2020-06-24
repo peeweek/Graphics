@@ -34,10 +34,10 @@ namespace UnityEditor.ShaderGraph
 
         public sealed override void UpdateNodeAfterDeserialization()
         {
-            AddSlot(new Vector1MaterialSlot(InputSlotXId, kInputSlotXName, kInputSlotXName, SlotType.Input, m_Value.x));
-            AddSlot(new Vector1MaterialSlot(InputSlotYId, kInputSlotYName, kInputSlotYName, SlotType.Input, m_Value.y, label1: "Y"));
-            AddSlot(new Vector1MaterialSlot(InputSlotZId, kInputSlotZName, kInputSlotZName, SlotType.Input, m_Value.z, label1: "Z"));
-            AddSlot(new Vector1MaterialSlot(InputSlotWId, kInputSlotWName, kInputSlotWName, SlotType.Input, m_Value.w, label1: "W"));
+            AddSlot(new FloatMaterialSlot(InputSlotXId, kInputSlotXName, kInputSlotXName, SlotType.Input, m_Value.x));
+            AddSlot(new FloatMaterialSlot(InputSlotYId, kInputSlotYName, kInputSlotYName, SlotType.Input, m_Value.y, label1: "Y"));
+            AddSlot(new FloatMaterialSlot(InputSlotZId, kInputSlotZName, kInputSlotZName, SlotType.Input, m_Value.z, label1: "Z"));
+            AddSlot(new FloatMaterialSlot(InputSlotWId, kInputSlotWName, kInputSlotWName, SlotType.Input, m_Value.w, label1: "W"));
             AddSlot(new Vector4MaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, Vector4.zero));
             RemoveSlotsNameNotMatching(new[] { OutputSlotId, InputSlotXId, InputSlotYId, InputSlotZId, InputSlotWId });
         }
@@ -61,10 +61,10 @@ namespace UnityEditor.ShaderGraph
 
         public AbstractShaderProperty AsShaderProperty()
         {
-            var slotX = FindInputSlot<Vector1MaterialSlot>(InputSlotXId);
-            var slotY = FindInputSlot<Vector1MaterialSlot>(InputSlotYId);
-            var slotZ = FindInputSlot<Vector1MaterialSlot>(InputSlotZId);
-            var slotW = FindInputSlot<Vector1MaterialSlot>(InputSlotWId);
+            var slotX = FindInputSlot<FloatMaterialSlot>(InputSlotXId);
+            var slotY = FindInputSlot<FloatMaterialSlot>(InputSlotYId);
+            var slotZ = FindInputSlot<FloatMaterialSlot>(InputSlotZId);
+            var slotW = FindInputSlot<FloatMaterialSlot>(InputSlotWId);
             return new Vector4ShaderProperty { value = new Vector4(slotX.value, slotY.value, slotZ.value, slotW.value) };
         }
 

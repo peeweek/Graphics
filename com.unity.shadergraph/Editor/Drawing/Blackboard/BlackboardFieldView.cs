@@ -181,8 +181,8 @@ namespace UnityEditor.ShaderGraph.Drawing
                 case BooleanShaderProperty booleanProperty:
                     booleanProperty.value = ((ToggleData)newValue).isOn;
                     break;
-                case Vector1ShaderProperty vector1Property:
-                    vector1Property.value = (float) newValue;
+                case FloatShaderProperty floatProperty:
+                    floatProperty.value = (float) newValue;
                     break;
                 case Vector2ShaderProperty vector2Property:
                     vector2Property.value = (Vector2) newValue;

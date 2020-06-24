@@ -92,7 +92,7 @@ namespace UnityEditor.ShaderGraph
                     AddSlot(new ColorRGBAMaterialSlot(0, descriptor.displayName, descriptor.name, SlotType.Input, colorRGBAControl.value, stageCapability));
                     break;
                 case FloatControl floatControl:
-                    AddSlot(new Vector1MaterialSlot(0, descriptor.displayName, descriptor.name, SlotType.Input, floatControl.value, stageCapability));
+                    AddSlot(new FloatMaterialSlot(0, descriptor.displayName, descriptor.name, SlotType.Input, floatControl.value, stageCapability));
                     break;
                 case Vector2Control vector2Control:
                     AddSlot(new Vector2MaterialSlot(0, descriptor.displayName, descriptor.name, SlotType.Input, vector2Control.value, stageCapability));

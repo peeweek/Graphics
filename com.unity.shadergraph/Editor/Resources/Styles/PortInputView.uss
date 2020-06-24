@@ -115,11 +115,11 @@ PortInputView.typeVector2 {
     --edge-color: #9AEF92;
 }
 
-PortInputView.typeVector1 > #container > #slot > #dot {
+PortInputView.typeFloat > #container > #slot > #dot {
     background-color: #84E4E7;
 }
 
-PortInputView.typeVector1 {
+PortInputView.typeFloat {
     --edge-color: #84E4E7;
 }
 

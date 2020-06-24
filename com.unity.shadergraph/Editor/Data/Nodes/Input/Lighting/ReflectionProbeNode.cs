@@ -22,7 +22,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_ReflectionProbe(
             [Slot(0, Binding.ObjectSpaceViewDirection)] Vector3 ViewDir,
             [Slot(1, Binding.ObjectSpaceNormal)] Vector3 Normal,
-            [Slot(2, Binding.None)] Vector1 LOD,
+            [Slot(2, Binding.None)] Float LOD,
             [Slot(3, Binding.None)] out Vector3 Out)
         {
             Out = Vector3.one;

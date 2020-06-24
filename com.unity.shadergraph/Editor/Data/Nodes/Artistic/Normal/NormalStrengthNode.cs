@@ -19,7 +19,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_NormalStrength(
             [Slot(0, Binding.None, 0, 0, 1, 0)] Vector3 In,
-            [Slot(1, Binding.None, 1, 1, 1, 1)] Vector1 Strength,
+            [Slot(1, Binding.None, 1, 1, 1, 1)] Float Strength,
             [Slot(2, Binding.None)] out Vector3 Out)
         {
             Out = Vector3.up;

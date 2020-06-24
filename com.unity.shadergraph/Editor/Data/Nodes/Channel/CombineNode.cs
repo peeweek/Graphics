@@ -19,10 +19,10 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_Combine(
-            [Slot(0, Binding.None)] Vector1 R,
-            [Slot(1, Binding.None)] Vector1 G,
-            [Slot(2, Binding.None)] Vector1 B,
-            [Slot(3, Binding.None)] Vector1 A,
+            [Slot(0, Binding.None)] Float R,
+            [Slot(1, Binding.None)] Float G,
+            [Slot(2, Binding.None)] Float B,
+            [Slot(3, Binding.None)] Float A,
             [Slot(4, Binding.None)] out Vector4 RGBA,
             [Slot(5, Binding.None)] out Vector3 RGB,
             [Slot(6, Binding.None)] out Vector2 RG)

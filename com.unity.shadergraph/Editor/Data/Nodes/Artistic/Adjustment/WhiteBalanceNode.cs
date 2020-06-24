@@ -18,8 +18,8 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_WhiteBalance(
             [Slot(0, Binding.None)] Vector3 In,
-            [Slot(1, Binding.None)] Vector1 Temperature,
-            [Slot(2, Binding.None)] Vector1 Tint,
+            [Slot(1, Binding.None)] Float Temperature,
+            [Slot(2, Binding.None)] Float Tint,
             [Slot(3, Binding.None)] out Vector3 Out)
         {
             Out = Vector3.zero;

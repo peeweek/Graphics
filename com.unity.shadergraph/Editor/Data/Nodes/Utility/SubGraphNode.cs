@@ -188,7 +188,7 @@ namespace UnityEditor.ShaderGraph
             {
                 var outputSlots = new List<MaterialSlot>();
                 GetOutputSlots(outputSlots);
-                var outputPrecision = asset != null ? asset.outputPrecision : ConcretePrecision.Float;
+                var outputPrecision = asset != null ? asset.outputPrecision : ConcretePrecision.Single;
                 foreach (var slot in outputSlots)
                 {
                     sb.AppendLine($"{slot.concreteValueType.ToShaderString(outputPrecision)} {GetVariableNameForSlot(slot.id)} = {slot.GetDefaultValue(GenerationMode.ForReals)};");
@@ -239,7 +239,7 @@ namespace UnityEditor.ShaderGraph
             foreach (var feedbackSlot in asset.vtFeedbackVariables)
             {
                 string feedbackVar = GetVariableNameForNode() + "_" + feedbackSlot;
-                sb.AppendLine("{0} {1};", ConcreteSlotValueType.Vector4.ToShaderString(ConcretePrecision.Float), feedbackVar);
+                sb.AppendLine("{0} {1};", ConcreteSlotValueType.Vector4.ToShaderString(ConcretePrecision.Single), feedbackVar);
                 arguments.Add(feedbackVar);
             }
 
@@ -391,10 +391,10 @@ namespace UnityEditor.ShaderGraph
                                 tSlot.value = tProp.value;
                         }
                         break;
-                    case ConcreteSlotValueType.Vector1:
+                    case ConcreteSlotValueType.Float:
                         {
-                            var tSlot = slot as Vector1MaterialSlot;
-                            var tProp = prop as Vector1ShaderProperty;
+                            var tSlot = slot as FloatMaterialSlot;
+                            var tProp = prop as FloatShaderProperty;
                             if (tSlot != null && tProp != null)
                                 tSlot.value = tProp.value;
                         }

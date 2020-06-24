@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -179,8 +179,8 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
 
             switch(property)
             {
-            case Vector1ShaderProperty vector1Property:
-                HandleVector1ShaderProperty(propertySheet, vector1Property);
+            case FloatShaderProperty floatProperty:
+                HandleFloatShaderProperty(propertySheet, floatProperty);
                 break;
             case Vector2ShaderProperty vector2Property:
                 HandleVector2ShaderProperty(propertySheet, vector2Property);
@@ -261,10 +261,10 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
             gpuInstancedToggle.SetEnabled(property.isGpuInstanceable);
         }
 
-        void HandleVector1ShaderProperty(PropertySheet propertySheet, Vector1ShaderProperty vector1ShaderProperty)
+        void HandleFloatShaderProperty(PropertySheet propertySheet, FloatShaderProperty floatShaderProperty)
         {
             // Handle vector 1 mode parameters
-            switch (vector1ShaderProperty.floatType)
+            switch (floatShaderProperty.floatType)
             {
                 case FloatType.Slider:
                     var floatPropertyDrawer = new FloatPropertyDrawer();
@@ -276,7 +276,7 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
                             _changeValueCallback(newValue);
                             _postChangeValueCallback();
                         },
-                        vector1ShaderProperty.value,
+                        floatShaderProperty.value,
                         "Default",
                         out var propertyFloatField));
 
@@ -284,13 +284,13 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
                     propertySheet.Add(floatPropertyDrawer.CreateGUI(
                         newValue =>
                         {
-                            if (newValue > vector1ShaderProperty.rangeValues.y)
+                            if (newValue > floatShaderProperty.rangeValues.y)
                                 propertySheet.warningContainer.Q<Label>().text = "Min cannot be greater than Max.";
                             _preChangeValueCallback("Change Range Property Minimum");
-                            vector1ShaderProperty.rangeValues = new Vector2(newValue, vector1ShaderProperty.rangeValues.y);
+                            floatShaderProperty.rangeValues = new Vector2(newValue, floatShaderProperty.rangeValues.y);
                             _postChangeValueCallback();
                         },
-                        vector1ShaderProperty.rangeValues.x,
+                        floatShaderProperty.rangeValues.x,
                         "Min",
                         out var minFloatField));
 
@@ -298,13 +298,13 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
                     propertySheet.Add(floatPropertyDrawer.CreateGUI(
                         newValue =>
                         {
-                            if (newValue < vector1ShaderProperty.rangeValues.x)
+                            if (newValue < floatShaderProperty.rangeValues.x)
                                 propertySheet.warningContainer.Q<Label>().text = "Max cannot be lesser than Min.";
                             this._preChangeValueCallback("Change Range Property Maximum");
-                            vector1ShaderProperty.rangeValues = new Vector2(vector1ShaderProperty.rangeValues.x, newValue);
+                            floatShaderProperty.rangeValues = new Vector2(floatShaderProperty.rangeValues.x, newValue);
                             this._postChangeValueCallback();
                         },
-                        vector1ShaderProperty.rangeValues.y,
+                        floatShaderProperty.rangeValues.y,
                         "Max",
                         out var maxFloatField));
 
@@ -315,16 +315,16 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
                     minField.Q("unity-text-input").RegisterCallback<FocusOutEvent>(evt =>
                     {
                         propertySheet.warningContainer.Q<Label>().text = "";
-                        vector1ShaderProperty.value = Mathf.Max(Mathf.Min(vector1ShaderProperty.value, vector1ShaderProperty.rangeValues.y), vector1ShaderProperty.rangeValues.x);
-                        defaultField.value = vector1ShaderProperty.value;
+                        floatShaderProperty.value = Mathf.Max(Mathf.Min(floatShaderProperty.value, floatShaderProperty.rangeValues.y), floatShaderProperty.rangeValues.x);
+                        defaultField.value = floatShaderProperty.value;
                         _postChangeValueCallback();
                     });
 
                     maxField.Q("unity-text-input").RegisterCallback<FocusOutEvent>(evt =>
                     {
                         propertySheet.warningContainer.Q<Label>().text = "";
-                        vector1ShaderProperty.value = Mathf.Max(Mathf.Min(vector1ShaderProperty.value, vector1ShaderProperty.rangeValues.y), vector1ShaderProperty.rangeValues.x);
-                        defaultField.value = vector1ShaderProperty.value;
+                        floatShaderProperty.value = Mathf.Max(Mathf.Min(floatShaderProperty.value, floatShaderProperty.rangeValues.y), floatShaderProperty.rangeValues.x);
+                        defaultField.value = floatShaderProperty.value;
                         _postChangeValueCallback();
                     });
                     break;
@@ -334,7 +334,7 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
                     // Default field
                     propertySheet.Add(integerPropertyDrawer.CreateGUI(
                         newValue => this._changeValueCallback(newValue),
-                        (int)vector1ShaderProperty.value,
+                        (int)floatShaderProperty.value,
                         "Default",
                         out var integerPropertyField));
                     break;
@@ -349,7 +349,7 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
                             this._changeValueCallback(newValue);
                             this._postChangeValueCallback();
                         },
-                        vector1ShaderProperty.value,
+                        floatShaderProperty.value,
                         "Default",
                         out var defaultFloatPropertyField));
                     break;
@@ -362,10 +362,10 @@ namespace UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers
                     newValue =>
                     {
                         this._preChangeValueCallback("Change Vector1 Mode");
-                        vector1ShaderProperty.floatType = (FloatType)newValue;
+                        floatShaderProperty.floatType = (FloatType)newValue;
                         this._postChangeValueCallback(true);
                     },
-                    vector1ShaderProperty.floatType,
+                    floatShaderProperty.floatType,
                     "Mode",
                      FloatType.Default,
                     out var modePropertyEnumField));

@@ -22,7 +22,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Fog(
             [Slot(2, Binding.ObjectSpacePosition)] Vector3 Position,
             [Slot(0, Binding.None)] out Vector4 Color,
-            [Slot(1, Binding.None)] out Vector1 Density)
+            [Slot(1, Binding.None)] out Float Density)
         {
             Color = Vector4.zero;
             return

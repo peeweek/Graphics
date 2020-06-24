@@ -19,7 +19,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Distance(
             [Slot(0, Binding.None)] DynamicDimensionVector A,
             [Slot(1, Binding.None)] DynamicDimensionVector B,
-            [Slot(2, Binding.None)] out Vector1 Out)
+            [Slot(2, Binding.None)] out Float Out)
         {
             return
                 @"

@@ -63,8 +63,8 @@ namespace UnityEditor.ShaderGraph
             AddSlot(new SamplerStateMaterialSlot(SamplerInputId, kSamplerInputName, kSamplerInputName, SlotType.Input));
             AddSlot(new PositionMaterialSlot(PositionInputId, kPositionInputName, kPositionInputName, CoordinateSpace.AbsoluteWorld));
             AddSlot(new NormalMaterialSlot(NormalInputId, kNormalInputName, kNormalInputName, CoordinateSpace.World));
-            AddSlot(new Vector1MaterialSlot(TileInputId, kTileInputName, kTileInputName, SlotType.Input, 1));
-            AddSlot(new Vector1MaterialSlot(BlendInputId, kBlendInputName, kBlendInputName, SlotType.Input, 1));
+            AddSlot(new FloatMaterialSlot(TileInputId, kTileInputName, kTileInputName, SlotType.Input, 1));
+            AddSlot(new FloatMaterialSlot(BlendInputId, kBlendInputName, kBlendInputName, SlotType.Input, 1));
             RemoveSlotsNameNotMatching(new[] { OutputSlotId, TextureInputId, SamplerInputId, PositionInputId, NormalInputId, TileInputId, BlendInputId });
         }
 

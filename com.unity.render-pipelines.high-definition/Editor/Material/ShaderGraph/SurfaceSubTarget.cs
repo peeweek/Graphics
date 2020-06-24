@@ -328,7 +328,7 @@ namespace UnityEditor.Rendering.HighDefinition.ShaderGraph
                 value = new Color(1.0f, 1.0f, 1.0f, 1.0f)
             });
             // ShaderGraph only property used to send the RenderQueueType to the material
-            collector.AddShaderProperty(new Vector1ShaderProperty
+            collector.AddShaderProperty(new FloatShaderProperty
             {
                 overrideReferenceName = "_RenderQueueType",
                 hidden = true,

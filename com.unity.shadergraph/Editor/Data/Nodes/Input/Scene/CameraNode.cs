@@ -35,12 +35,12 @@ namespace UnityEditor.ShaderGraph
         {
             AddSlot(new Vector3MaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, Vector3.zero));
             AddSlot(new Vector3MaterialSlot(OutputSlot1Id, kOutputSlot1Name, kOutputSlot1Name, SlotType.Output, Vector3.zero));
-            AddSlot(new Vector1MaterialSlot(OutputSlot2Id, kOutputSlot2Name, kOutputSlot2Name, SlotType.Output, 0));
-            AddSlot(new Vector1MaterialSlot(OutputSlot3Id, kOutputSlot3Name, kOutputSlot3Name, SlotType.Output, 0));
-            AddSlot(new Vector1MaterialSlot(OutputSlot4Id, kOutputSlot4Name, kOutputSlot4Name, SlotType.Output, 1));
-            AddSlot(new Vector1MaterialSlot(OutputSlot5Id, kOutputSlot5Name, kOutputSlot5Name, SlotType.Output, 1));
-            AddSlot(new Vector1MaterialSlot(OutputSlot6Id, kOutputSlot6Name, kOutputSlot6Name, SlotType.Output, 1));
-            AddSlot(new Vector1MaterialSlot(OutputSlot7Id, kOutputSlot7Name, kOutputSlot7Name, SlotType.Output, 1));
+            AddSlot(new FloatMaterialSlot(OutputSlot2Id, kOutputSlot2Name, kOutputSlot2Name, SlotType.Output, 0));
+            AddSlot(new FloatMaterialSlot(OutputSlot3Id, kOutputSlot3Name, kOutputSlot3Name, SlotType.Output, 0));
+            AddSlot(new FloatMaterialSlot(OutputSlot4Id, kOutputSlot4Name, kOutputSlot4Name, SlotType.Output, 1));
+            AddSlot(new FloatMaterialSlot(OutputSlot5Id, kOutputSlot5Name, kOutputSlot5Name, SlotType.Output, 1));
+            AddSlot(new FloatMaterialSlot(OutputSlot6Id, kOutputSlot6Name, kOutputSlot6Name, SlotType.Output, 1));
+            AddSlot(new FloatMaterialSlot(OutputSlot7Id, kOutputSlot7Name, kOutputSlot7Name, SlotType.Output, 1));
             RemoveSlotsNameNotMatching(new[] { OutputSlotId, OutputSlot1Id, OutputSlot2Id, OutputSlot3Id, OutputSlot4Id, OutputSlot5Id, OutputSlot6Id, OutputSlot7Id });
         }
 

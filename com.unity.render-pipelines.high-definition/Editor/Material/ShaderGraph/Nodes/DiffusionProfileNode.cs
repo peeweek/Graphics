@@ -79,7 +79,7 @@ namespace UnityEditor.Rendering.HighDefinition
 
         public sealed override void UpdateNodeAfterDeserialization()
         {
-            AddSlot(new Vector1MaterialSlot(kOutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, 0.0f));
+            AddSlot(new FloatMaterialSlot(kOutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, 0.0f));
             RemoveSlotsNameNotMatching(new[] { kOutputSlotId });
 
             UpgradeIfNeeded();

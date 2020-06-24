@@ -66,8 +66,8 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_Comparison_Equal(
-            [Slot(0, Binding.None)] Vector1 A,
-            [Slot(1, Binding.None)] Vector1 B,
+            [Slot(0, Binding.None)] Float A,
+            [Slot(1, Binding.None)] Float B,
             [Slot(2, Binding.None)] out Boolean Out)
         {
             return
@@ -79,8 +79,8 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_Comparison_NotEqual(
-            [Slot(0, Binding.None)] Vector1 A,
-            [Slot(1, Binding.None)] Vector1 B,
+            [Slot(0, Binding.None)] Float A,
+            [Slot(1, Binding.None)] Float B,
             [Slot(2, Binding.None)] out Boolean Out)
         {
             return
@@ -92,8 +92,8 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_Comparison_Less(
-            [Slot(0, Binding.None)] Vector1 A,
-            [Slot(1, Binding.None)] Vector1 B,
+            [Slot(0, Binding.None)] Float A,
+            [Slot(1, Binding.None)] Float B,
             [Slot(2, Binding.None)] out Boolean Out)
         {
             return
@@ -105,8 +105,8 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_Comparison_LessOrEqual(
-            [Slot(0, Binding.None)] Vector1 A,
-            [Slot(1, Binding.None)] Vector1 B,
+            [Slot(0, Binding.None)] Float A,
+            [Slot(1, Binding.None)] Float B,
             [Slot(2, Binding.None)] out Boolean Out)
         {
             return
@@ -118,8 +118,8 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_Comparison_Greater(
-            [Slot(0, Binding.None)] Vector1 A,
-            [Slot(1, Binding.None)] Vector1 B,
+            [Slot(0, Binding.None)] Float A,
+            [Slot(1, Binding.None)] Float B,
             [Slot(2, Binding.None)] out Boolean Out)
         {
             return
@@ -131,8 +131,8 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_Comparison_GreaterOrEqual(
-            [Slot(0, Binding.None)] Vector1 A,
-            [Slot(1, Binding.None)] Vector1 B,
+            [Slot(0, Binding.None)] Float A,
+            [Slot(1, Binding.None)] Float B,
             [Slot(2, Binding.None)] out Boolean Out)
         {
             return

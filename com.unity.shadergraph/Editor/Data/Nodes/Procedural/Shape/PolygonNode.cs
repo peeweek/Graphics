@@ -19,9 +19,9 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_Polygon(
             [Slot(0, Binding.MeshUV0)] Vector2 UV,
-            [Slot(1, Binding.None, 6, 0, 0, 0)] Vector1 Sides,
-            [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Vector1 Width,
-            [Slot(3, Binding.None, 0.5f, 0, 0, 0)] Vector1 Height,
+            [Slot(1, Binding.None, 6, 0, 0, 0)] Float Sides,
+            [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Float Width,
+            [Slot(3, Binding.None, 0.5f, 0, 0, 0)] Float Height,
             [Slot(4, Binding.None, ShaderStageCapability.Fragment)] out DynamicDimensionVector Out)
         {
             return

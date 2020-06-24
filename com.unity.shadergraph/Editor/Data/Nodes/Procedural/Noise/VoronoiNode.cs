@@ -19,10 +19,10 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_Voronoi(
             [Slot(0, Binding.MeshUV0)] Vector2 UV,
-            [Slot(1, Binding.None, 2.0f, 0, 0, 0)] Vector1 AngleOffset,
-            [Slot(2, Binding.None, 5.0f, 5.0f, 5.0f, 5.0f)] Vector1 CellDensity,
-            [Slot(3, Binding.None)] out Vector1 Out,
-            [Slot(4, Binding.None)] out Vector1 Cells)
+            [Slot(1, Binding.None, 2.0f, 0, 0, 0)] Float AngleOffset,
+            [Slot(2, Binding.None, 5.0f, 5.0f, 5.0f, 5.0f)] Float CellDensity,
+            [Slot(3, Binding.None)] out Float Out,
+            [Slot(4, Binding.None)] out Float Cells)
         {
             return
                 @"

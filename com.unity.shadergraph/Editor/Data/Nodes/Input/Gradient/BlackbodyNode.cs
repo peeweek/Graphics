@@ -22,7 +22,7 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_Blackbody(
-            [Slot(0, Binding.None, 512.0f, 512.0f, 512.0f, 512.0f)] Vector1 Temperature,
+            [Slot(0, Binding.None, 512.0f, 512.0f, 512.0f, 512.0f)] Float Temperature,
             [Slot(1, Binding.None)] out Vector3 Out)
         {
             Out = Vector3.zero;

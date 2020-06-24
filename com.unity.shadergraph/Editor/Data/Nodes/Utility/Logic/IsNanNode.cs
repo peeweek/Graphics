@@ -23,7 +23,7 @@ namespace UnityEditor.ShaderGraph
         }
 
         static string Unity_IsNaN(
-            [Slot(0, Binding.None)] Vector1 In,
+            [Slot(0, Binding.None)] Float In,
             [Slot(1, Binding.None)] out Boolean Out)
         {
             return

@@ -79,7 +79,7 @@ namespace UnityEditor.ShaderGraph
                 typeof(IntegerNode ),
                 typeof(SliderNode ),
                 typeof(TimeNode ),
-                typeof(Vector1Node ),
+                typeof(FloatNode ),
                 typeof(Vector2Node ),
                 typeof(Vector3Node ),
                 typeof(Vector4Node )

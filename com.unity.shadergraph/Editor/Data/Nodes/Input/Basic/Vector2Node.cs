@@ -31,8 +31,8 @@ namespace UnityEditor.ShaderGraph
 
         public sealed override void UpdateNodeAfterDeserialization()
         {
-            AddSlot(new Vector1MaterialSlot(InputSlotXId, kInputSlotXName, kInputSlotXName, SlotType.Input, m_Value.x));
-            AddSlot(new Vector1MaterialSlot(InputSlotYId, kInputSlotYName, kInputSlotYName, SlotType.Input, m_Value.y, label1: "Y"));
+            AddSlot(new FloatMaterialSlot(InputSlotXId, kInputSlotXName, kInputSlotXName, SlotType.Input, m_Value.x));
+            AddSlot(new FloatMaterialSlot(InputSlotYId, kInputSlotYName, kInputSlotYName, SlotType.Input, m_Value.y, label1: "Y"));
             AddSlot(new Vector2MaterialSlot(OutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, Vector4.zero));
             RemoveSlotsNameNotMatching(new[] { OutputSlotId, InputSlotXId, InputSlotYId });
         }
@@ -52,8 +52,8 @@ namespace UnityEditor.ShaderGraph
 
         public AbstractShaderProperty AsShaderProperty()
         {
-            var slotX = FindInputSlot<Vector1MaterialSlot>(InputSlotXId);
-            var slotY = FindInputSlot<Vector1MaterialSlot>(InputSlotYId);
+            var slotX = FindInputSlot<FloatMaterialSlot>(InputSlotXId);
+            var slotY = FindInputSlot<FloatMaterialSlot>(InputSlotYId);
             return new Vector2ShaderProperty { value = new Vector2(slotX.value, slotY.value) };
         }
 

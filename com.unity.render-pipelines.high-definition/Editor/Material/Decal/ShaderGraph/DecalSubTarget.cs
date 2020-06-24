@@ -105,7 +105,7 @@ namespace UnityEditor.Rendering.HighDefinition.ShaderGraph
 
         public override void CollectShaderProperties(PropertyCollector collector, GenerationMode generationMode)
         {
-            Vector1ShaderProperty drawOrder = new Vector1ShaderProperty();
+            FloatShaderProperty drawOrder = new FloatShaderProperty();
             drawOrder.overrideReferenceName = "_DrawOrder";
             drawOrder.displayName = "Draw Order";
             drawOrder.floatType = FloatType.Integer;
@@ -113,7 +113,7 @@ namespace UnityEditor.Rendering.HighDefinition.ShaderGraph
             drawOrder.value = 0;
             collector.AddShaderProperty(drawOrder);
 
-            Vector1ShaderProperty decalMeshDepthBias = new Vector1ShaderProperty();
+            FloatShaderProperty decalMeshDepthBias = new FloatShaderProperty();
             decalMeshDepthBias.overrideReferenceName = "_DecalMeshDepthBias";
             decalMeshDepthBias.displayName = "DecalMesh DepthBias";
             decalMeshDepthBias.hidden = true;

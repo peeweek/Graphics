@@ -220,14 +220,14 @@ namespace UnityEditor.ShaderGraph
 
             if (m_LodCalculation == LodCalculation.VtLevel_Lod)
             {
-                var slot = new Vector1MaterialSlot(LODInputId, LODSlotName, LODSlotName, SlotType.Input, 0.0f, ShaderStageCapability.All, LODSlotName);
+                var slot = new FloatMaterialSlot(LODInputId, LODSlotName, LODSlotName, SlotType.Input, 0.0f, ShaderStageCapability.All, LODSlotName);
                 AddSlot(slot);
                 usedSlots.Add(LODInputId);
             }
 
             if (m_LodCalculation == LodCalculation.VtLevel_Bias)
             {
-                var slot = new Vector1MaterialSlot(BiasInputId, BiasSlotName, BiasSlotName, SlotType.Input, 0.0f, ShaderStageCapability.Fragment, BiasSlotName);
+                var slot = new FloatMaterialSlot(BiasInputId, BiasSlotName, BiasSlotName, SlotType.Input, 0.0f, ShaderStageCapability.Fragment, BiasSlotName);
                 AddSlot(slot);
                 usedSlots.Add(BiasInputId);
             }

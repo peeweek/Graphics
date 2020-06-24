@@ -69,10 +69,10 @@ GraphEditorView > #content > #inspector {
     --edge-input-color: #9AEF92;
 }
 
-.edge.fromVector1 {
+.edge.fromFloat {
     --edge-output-color: #84E4E7;
 }
-.edge.toVector1 {
+.edge.toFloat {
     --edge-input-color: #84E4E7;
 }
 

@@ -219,7 +219,7 @@ namespace UnityEditor.Rendering.HighDefinition.ShaderGraph
                 var coatMaskSlotId = HDLitMasterNode1.CoatMaskSlotId;
 
                 var node = masterNode as AbstractMaterialNode;
-                var coatMaskSlot = node.FindSlot<Vector1MaterialSlot>(coatMaskSlotId);
+                var coatMaskSlot = node.FindSlot<FloatMaterialSlot>(coatMaskSlotId);
                 if(coatMaskSlot == null)
                     return false;
 

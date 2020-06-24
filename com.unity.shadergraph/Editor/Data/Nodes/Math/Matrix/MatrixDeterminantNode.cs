@@ -20,7 +20,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_MatrixDeterminant(
             [Slot(0, Binding.None)] DynamicDimensionMatrix In,
-            [Slot(1, Binding.None)] out Vector1 Out)
+            [Slot(1, Binding.None)] out Float Out)
         {
             return
                 @"

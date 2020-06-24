@@ -42,7 +42,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Rotate_About_Axis_Degrees(
             [Slot(0, Binding.None)] Vector3 In,
             [Slot(1, Binding.None)] Vector3 Axis,
-            [Slot(2, Binding.None)] Vector1 Rotation,
+            [Slot(2, Binding.None)] Float Rotation,
             [Slot(3, Binding.None)] out Vector3 Out)
         {
             Out = In;
@@ -70,7 +70,7 @@ namespace UnityEditor.ShaderGraph
         static string Unity_Rotate_About_Axis_Radians(
             [Slot(0, Binding.None)] Vector3 In,
             [Slot(1, Binding.None)] Vector3 Axis,
-            [Slot(2, Binding.None)] Vector1 Rotation,
+            [Slot(2, Binding.None)] Float Rotation,
             [Slot(3, Binding.None)] out Vector3 Out)
         {
             Out = In;

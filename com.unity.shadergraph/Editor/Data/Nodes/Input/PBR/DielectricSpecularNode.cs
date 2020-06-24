@@ -83,7 +83,7 @@ namespace UnityEditor.ShaderGraph
 
         public sealed override void UpdateNodeAfterDeserialization()
         {
-            AddSlot(new Vector1MaterialSlot(kOutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, 0));
+            AddSlot(new FloatMaterialSlot(kOutputSlotId, kOutputSlotName, kOutputSlotName, SlotType.Output, 0));
             RemoveSlotsNameNotMatching(new[] { kOutputSlotId });
         }
 
@@ -123,7 +123,7 @@ namespace UnityEditor.ShaderGraph
 
             if (material.type == DielectricMaterialType.Common)
             {
-                properties.Add(new PreviewProperty(PropertyType.Vector1)
+                properties.Add(new PreviewProperty(PropertyType.Float)
                 {
                     name = string.Format("_{0}_Range", GetVariableNameForNode()),
                     floatValue = material.range
@@ -131,7 +131,7 @@ namespace UnityEditor.ShaderGraph
             }
             else if (material.type == DielectricMaterialType.Custom)
             {
-                properties.Add(new PreviewProperty(PropertyType.Vector1)
+                properties.Add(new PreviewProperty(PropertyType.Float)
                 {
                     name = string.Format("_{0}_IOR", GetVariableNameForNode()),
                     floatValue = material.indexOfRefraction
@@ -148,7 +148,7 @@ namespace UnityEditor.ShaderGraph
 
             if (material.type == DielectricMaterialType.Common)
             {
-                properties.AddShaderProperty(new Vector1ShaderProperty()
+                properties.AddShaderProperty(new FloatShaderProperty()
                 {
                     overrideReferenceName = string.Format("_{0}_Range", GetVariableNameForNode()),
                     generatePropertyBlock = false
@@ -156,7 +156,7 @@ namespace UnityEditor.ShaderGraph
             }
             else if (material.type == DielectricMaterialType.Custom)
             {
-                properties.AddShaderProperty(new Vector1ShaderProperty()
+                properties.AddShaderProperty(new FloatShaderProperty()
                 {
                     overrideReferenceName = string.Format("_{0}_IOR", GetVariableNameForNode()),
                     generatePropertyBlock = false

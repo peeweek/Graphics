@@ -16,7 +16,7 @@ namespace UnityEditor.Rendering.HighDefinition
     [FormerName("UnityEditor.ShaderGraph.DiffusionProfileInputMaterialSlot")]
     [FormerName("UnityEditor.Experimental.Rendering.HDPipeline.DiffusionProfileInputMaterialSlot")]
     [HasDependencies(typeof(DiffusionProfileInputMaterialSlot))]
-    class DiffusionProfileInputMaterialSlot : Vector1MaterialSlot, IHasDependencies
+    class DiffusionProfileInputMaterialSlot : FloatMaterialSlot, IHasDependencies
     {
         [SerializeField, Obsolete("Use m_DiffusionProfileAsset instead.")]
         PopupList m_DiffusionProfile;
@@ -97,7 +97,7 @@ namespace UnityEditor.Rendering.HighDefinition
 
             // Note: Unity ShaderLab can't parse float values with exponential notation so we just can't
             // store the hash nor the asset GUID here :(
-            var diffusionProfileHash = new Vector1ShaderProperty
+            var diffusionProfileHash = new FloatShaderProperty
             {
                 overrideReferenceName = "_DiffusionProfileHash",
                 hidden = true,

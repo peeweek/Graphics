@@ -19,9 +19,9 @@ namespace UnityEditor.ShaderGraph
         static string Unity_ColorMask(
             [Slot(0, Binding.None)] Vector3 In,
             [Slot(1, Binding.None)] ColorRGB MaskColor,
-            [Slot(2, Binding.None)] Vector1 Range,
-            [Slot(4, Binding.None)] Vector1 Fuzziness,
-            [Slot(3, Binding.None)] out Vector1 Out)
+            [Slot(2, Binding.None)] Float Range,
+            [Slot(4, Binding.None)] Float Fuzziness,
+            [Slot(3, Binding.None)] out Float Out)
         {
             return
                 @"

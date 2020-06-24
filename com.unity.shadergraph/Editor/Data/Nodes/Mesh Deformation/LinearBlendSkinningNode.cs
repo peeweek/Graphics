@@ -70,7 +70,7 @@ namespace UnityEditor.ShaderGraph
         public override void CollectShaderProperties(PropertyCollector properties, GenerationMode generationMode)
         {
 #if HYBRID_RENDERER_0_6_0_OR_NEWER
-            properties.AddShaderProperty(new Vector1ShaderProperty()
+            properties.AddShaderProperty(new FloatShaderProperty()
             {
                 displayName = "Skin Matrix Index Offset",
                 overrideReferenceName = "_SkinMatrixIndex",
@@ -82,7 +82,7 @@ namespace UnityEditor.ShaderGraph
             });
 
 #else
-            properties.AddShaderProperty(new Vector1ShaderProperty()
+            properties.AddShaderProperty(new FloatShaderProperty()
             {
                 overrideReferenceName = "_SkinMatricesOffset",
                 gpuInstanced = true,

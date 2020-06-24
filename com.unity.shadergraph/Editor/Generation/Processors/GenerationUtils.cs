@@ -513,12 +513,12 @@ namespace UnityEditor.ShaderGraph
 
             switch (convertToType)
             {
-                case ConcreteSlotValueType.Vector1:
+                case ConcreteSlotValueType.Float:
                     return string.Format("({0}).x", rawOutput);
                 case ConcreteSlotValueType.Vector2:
                     switch (convertFromType)
                     {
-                        case ConcreteSlotValueType.Vector1:
+                        case ConcreteSlotValueType.Float:
                             return string.Format("({0}.xx)", rawOutput);
                         case ConcreteSlotValueType.Vector3:
                         case ConcreteSlotValueType.Vector4:
@@ -529,7 +529,7 @@ namespace UnityEditor.ShaderGraph
                 case ConcreteSlotValueType.Vector3:
                     switch (convertFromType)
                     {
-                        case ConcreteSlotValueType.Vector1:
+                        case ConcreteSlotValueType.Float:
                             return string.Format("({0}.xxx)", rawOutput);
                         case ConcreteSlotValueType.Vector2:
                             return string.Format("($precision3({0}, 0.0))", rawOutput);
@@ -541,7 +541,7 @@ namespace UnityEditor.ShaderGraph
                 case ConcreteSlotValueType.Vector4:
                     switch (convertFromType)
                     {
-                        case ConcreteSlotValueType.Vector1:
+                        case ConcreteSlotValueType.Float:
                             return string.Format("({0}.xxxx)", rawOutput);
                         case ConcreteSlotValueType.Vector2:
                             return string.Format("($precision4({0}, 0.0, 1.0))", rawOutput);
@@ -577,7 +577,7 @@ namespace UnityEditor.ShaderGraph
             // preview is always dimension 4
             switch (convertFromType)
             {
-                case ConcreteSlotValueType.Vector1:
+                case ConcreteSlotValueType.Float:
                     return string.Format("half4({0}, {0}, {0}, 1.0)", variableName);
                 case ConcreteSlotValueType.Vector2:
                     return string.Format("half4({0}.x, {0}.y, 0.0, 1.0)", variableName);
@@ -733,7 +733,7 @@ namespace UnityEditor.ShaderGraph
                             surfaceDescriptionStruct.AppendLine("{0} {1};", ConcreteSlotValueType.Vector4.ToShaderString(firstSlot.owner.concretePrecision), "Out");
                         }
                         else
-                            surfaceDescriptionStruct.AppendLine("{0} {1};", ConcreteSlotValueType.Vector4.ToShaderString(ConcretePrecision.Float), "Out");
+                            surfaceDescriptionStruct.AppendLine("{0} {1};", ConcreteSlotValueType.Vector4.ToShaderString(ConcretePrecision.Single), "Out");
                         
                     }
                     else
@@ -756,7 +756,7 @@ namespace UnityEditor.ShaderGraph
                 // TODO: move this into the regular FieldDescriptor system with a conditional, doesn't belong as a special case here
                 if (virtualTextureFeedback)
                 {
-                    surfaceDescriptionStruct.AppendLine("{0} {1};", ConcreteSlotValueType.Vector4.ToShaderString(ConcretePrecision.Float), "VTPackedFeedback");
+                    surfaceDescriptionStruct.AppendLine("{0} {1};", ConcreteSlotValueType.Vector4.ToShaderString(ConcretePrecision.Single), "VTPackedFeedback");
 
                     if (!isSubgraphOutput && activeFields != null)
                     {
@@ -779,7 +779,7 @@ namespace UnityEditor.ShaderGraph
             GenerationMode mode,
             string functionName = "PopulateSurfaceData",
             string surfaceDescriptionName = "SurfaceDescription",
-            Vector1ShaderProperty outputIdProperty = null,
+            FloatShaderProperty outputIdProperty = null,
             IEnumerable<MaterialSlot> slots = null,
             string graphInputStructName = "SurfaceDescriptionInputs",
             bool virtualTextureFeedback = false)

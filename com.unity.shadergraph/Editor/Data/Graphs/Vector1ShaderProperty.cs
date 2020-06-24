@@ -10,14 +10,14 @@ namespace UnityEditor.ShaderGraph.Internal
     [Serializable]
     [FormerName("UnityEditor.ShaderGraph.FloatShaderProperty")]
     [FormerName("UnityEditor.ShaderGraph.Vector1ShaderProperty")]
-    public sealed class Vector1ShaderProperty : AbstractShaderProperty<float>
+    public sealed class FloatShaderProperty : AbstractShaderProperty<float>
     {
-        internal Vector1ShaderProperty()
+        internal FloatShaderProperty()
         {
-            displayName = "Vector1";
+            displayName = "Float";
         }
         
-        public override PropertyType propertyType => PropertyType.Vector1;
+        public override PropertyType propertyType => PropertyType.Float;
         
         internal override bool isBatchable => true;
         internal override bool isExposable => true;
@@ -122,8 +122,8 @@ namespace UnityEditor.ShaderGraph.Internal
                 case FloatType.Integer:
                     return new IntegerNode { value = (int)value };
                 default:
-                    var node = new Vector1Node();
-                    node.FindInputSlot<Vector1MaterialSlot>(Vector1Node.InputSlotXId).value = value;
+                    var node = new FloatNode();
+                    node.FindInputSlot<FloatMaterialSlot>(FloatNode.InputSlotXId).value = value;
                     return node;
             }
         }
@@ -139,7 +139,7 @@ namespace UnityEditor.ShaderGraph.Internal
 
         internal override ShaderInput Copy()
         {
-            return new Vector1ShaderProperty()
+            return new FloatShaderProperty()
             {
                 displayName = displayName,
                 hidden = hidden,

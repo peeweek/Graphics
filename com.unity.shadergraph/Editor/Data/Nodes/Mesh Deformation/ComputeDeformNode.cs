@@ -72,7 +72,7 @@ namespace UnityEditor.ShaderGraph
 
         public override void CollectShaderProperties(PropertyCollector properties, GenerationMode generationMode)
         {
-            properties.AddShaderProperty(new Vector1ShaderProperty()
+            properties.AddShaderProperty(new FloatShaderProperty()
             {
                 displayName = "Compute Mesh Buffer Index Offset",
                 overrideReferenceName = "_ComputeMeshIndex",

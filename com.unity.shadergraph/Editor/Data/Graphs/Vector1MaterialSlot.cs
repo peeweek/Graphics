@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 namespace UnityEditor.ShaderGraph
 {
     [Serializable]
-    class Vector1MaterialSlot : MaterialSlot, IMaterialSlotHasValue<float>
+    class FloatMaterialSlot : MaterialSlot, IMaterialSlotHasValue<float>
     {
         [SerializeField]
         float m_Value;
@@ -20,11 +20,11 @@ namespace UnityEditor.ShaderGraph
         [SerializeField]
         string[] m_Labels;
 
-        public Vector1MaterialSlot()
+        public FloatMaterialSlot()
         {
         }
 
-        public Vector1MaterialSlot(
+        public FloatMaterialSlot(
             int slotId,
             string displayName,
             string shaderOutputName,
@@ -69,7 +69,7 @@ namespace UnityEditor.ShaderGraph
             if (matOwner == null)
                 throw new Exception(string.Format("Slot {0} either has no owner, or the owner is not a {1}", this, typeof(AbstractMaterialNode)));
 
-            var property = new Vector1ShaderProperty()
+            var property = new FloatShaderProperty()
             {
                 overrideReferenceName = matOwner.GetVariableNameForSlot(id),
                 generatePropertyBlock = false,
@@ -78,12 +78,12 @@ namespace UnityEditor.ShaderGraph
             properties.AddShaderProperty(property);
         }
 
-        public override SlotValueType valueType { get { return SlotValueType.Vector1; } }
-        public override ConcreteSlotValueType concreteValueType { get { return ConcreteSlotValueType.Vector1; } }
+        public override SlotValueType valueType { get { return SlotValueType.Float; } }
+        public override ConcreteSlotValueType concreteValueType { get { return ConcreteSlotValueType.Float; } }
 
         public override void GetPreviewProperties(List<PreviewProperty> properties, string name)
         {
-            var pp = new PreviewProperty(PropertyType.Vector1)
+            var pp = new PreviewProperty(PropertyType.Float)
             {
                 name = name,
                 floatValue = value,
@@ -93,7 +93,7 @@ namespace UnityEditor.ShaderGraph
 
         public override void CopyValuesFrom(MaterialSlot foundSlot)
         {
-            var slot = foundSlot as Vector1MaterialSlot;
+            var slot = foundSlot as FloatMaterialSlot;
             if (slot != null)
                 value = slot.value;
         }

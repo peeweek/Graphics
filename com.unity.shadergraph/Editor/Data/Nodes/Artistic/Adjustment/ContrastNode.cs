@@ -18,7 +18,7 @@ namespace UnityEditor.ShaderGraph
 
         static string Unity_Contrast(
             [Slot(0, Binding.None)] Vector3 In,
-            [Slot(1, Binding.None, 1, 1, 1, 1)] Vector1 Contrast,
+            [Slot(1, Binding.None, 1, 1, 1, 1)] Float Contrast,
             [Slot(2, Binding.None)] out Vector3 Out)
         {
             Out = Vector2.zero;
