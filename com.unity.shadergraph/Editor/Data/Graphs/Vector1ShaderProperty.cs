@@ -14,7 +14,7 @@ namespace UnityEditor.ShaderGraph.Internal
     {
         internal Vector1ShaderProperty()
         {
-            displayName = "Vector1";
+            displayName = "Scalar";
         }
         
         public override PropertyType propertyType => PropertyType.Vector1;
